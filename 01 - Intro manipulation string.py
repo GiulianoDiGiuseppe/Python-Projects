@@ -14,18 +14,18 @@ def divide_string(string):
     return array_string
 
 def count_w_m_p(string):
-    # Analysis about string
+# Analysis of string
     c_word=0
     c_marks=0
     phrases=0
-    dic_word = { }# define list of dictionaries {word:'a' , cont: 3}
+    dic_word = { }# define a list of dictionaries {word:'a' , cont: 3}
     for i in range(len(string)):
         # count punctuation marks
-        # number of phrases is same of marks
+        # number of phrases is same as marks
         if string[i] in comma or string[i] in punctuation:
             c_marks+=1
             phrases+=1
-        # count word not punctuation marks
+        # count words not punctuation marks
         elif string[i]!=' ':
             c_word+=1
             # count character max and min
@@ -60,12 +60,12 @@ def print_data(c_word,c_marks,phrases,max_char,max_ele,min_char,min_ele):
 print(" -----  Exercise  ----")
 comma = [","]
 punctuation = ["?",".","!"]
-print("hi everyone . in this exercise we try manipulate the string, we use a different command. like split or replace! are you read?")
+print("hi everyone . in this exercise we try to manipulate the string, we use a different command. like split or replace! are you read?")
 string='1'
 while(string!='0'):
     print(" \n ------------------------   \n ")
     if(string=='1'):
-        string = "hi everyone . in this exercise we try manipulate the string, we use a different command. like split or replace! are you read?"
+        string = "hi everyone . in this exercise we try to manipulate the string, and we use a different command. like split or replace! are you read?"
         print(" this is a EXAMPLE \n")
         print("string = ",string)
     else:
@@ -73,7 +73,7 @@ while(string!='0'):
 
     if(string!='0'):
         array_string = []
-        print(" this is the punctuation that the programm can scan : '. , !' ")
+        print(" this is the punctuation that the program can scan : '. , !' ")
         array_string=divide_string(string)
         print("this is a list of substring:" ,array_string)
         c_word,c_marks,phrases,dictionaries=count_w_m_p(string)
@@ -83,7 +83,7 @@ while(string!='0'):
 print("Bye Bye")
 
 
-#Possible implementation
+#Possible implementations
 '''
 1) insert more phrases by keyboard
 2) output menage with table

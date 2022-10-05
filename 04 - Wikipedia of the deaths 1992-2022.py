@@ -10,7 +10,7 @@ def main():
 	years= [item for item in range(1992,2022)]
 
 	# Decision of extract data
-	answer=input("do you want extract another time the data of deaths?[Y/N]")
+	answer=input("do you want to extract another time the data of deaths?[Y/N]")
 	if answer=='Y':
 		data_json=extract_death(years,months,wiki_api)	
 
@@ -37,7 +37,7 @@ def main():
 	show_avg_age(years,analysis_age_year)
 	show_death_time(years,analysis_number_year,analysis_number_month)
 	
-	print(" FINE")
+	print(" END ")
 
 def show_death_time(years,analysis_number_year,analysis_number_month):
 	plt.plot(analysis_number_year.keys(),analysis_number_year.values())
@@ -97,13 +97,13 @@ def analysis_number_death(years,months,analysis_month):
 	return total ,deaths_year ,deaths_year_month
 
 # output min and max age of people and 
-# # give the dictionaries with age in specific month or year
+# # give the dictionaries with age in a specific month or year
 def analysis_age_death(years,months,data_json):
 	min_age=100
 	max_age=0
 	dic_max=[]
 	dic_min=[]
-	answer3=input("Do you want see max/min a animal or tree? :[Y/N]")
+	answer3=input("Do you want to see max/min an animal or tree? :[Y/N]")
 	if answer3=='Y':
 		enable=True
 	else:
@@ -150,7 +150,7 @@ def analysis_age_death(years,months,data_json):
 	print("the total dead people in dataset is :", total)
 	return dic_max , max_age , dic_min , min_age ,total,analysis_month,analysis_year
 
-# give a person/s with maximum age
+# give a person/people with themaximum age
 def max_age_people(person,max_age,dic_max,enable):
 	if person['age']==max_age :
 		dic_max.append(person)
@@ -160,7 +160,7 @@ def max_age_people(person,max_age,dic_max,enable):
 		dic_max.append(person)
 	return dic_max , max_age
 
-# give a person/s with minimum age
+# give a person/people with the minimum age
 def min_age_people(person,min_age,dic_min,enable):
 	if int(person['age'])==min_age and (person['name']=='Paddles' or enable) :
 		dic_min.append(person)
@@ -209,11 +209,11 @@ def parse_page(page):
 
 	return day_to_death
 
-# return person a dictionary with 3 keys (name,age,info)
+# return a set of people a dictionary with 3 keys (name,age,info)
 def parse_line(line):
 	person={}
 	line_split=line.split(",")
-	#Save line like a dictionary considered different cases
+    #Save lines like a dictionary considering different cases
 	if line_split[0]=='=':
 		return None
 	if len(line_split)>1 :

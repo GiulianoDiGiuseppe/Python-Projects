@@ -44,4 +44,4 @@ while answer!='N':
     print("\n temperature now is :", ap_temperature_list[int(hour)],"°C")
     print(" winds speed is :", MeteoOpen["current_weather"]["windspeed"],"km/h")
     print(" wind direction now is :", MeteoOpen["current_weather"]["winddirection"],"°")
-    answer=input(" do you want insert another provincia?[Y/N] ")
+    answer=input(" do you want to insert another provincia?[Y/N] ")

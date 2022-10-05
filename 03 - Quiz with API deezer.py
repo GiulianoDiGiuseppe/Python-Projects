@@ -7,7 +7,7 @@ def main():
 
     DEEZER_SEARCH_ARTIST_API = 'https://api.deezer.com/artist/'
 
-    # example of artist
+    # example of artists
     # we have in a file the name of artists and their ID, we take ID of artists
     # by file and request the page at deezer
     to_be_searched_artits = ["Elio e le storie tese", "Queen", "Eminem", "Al Bano", "Mina", "Ghali", "Muse", "The Beatles", "The Rolling Stones", "Micheal Jackson"]
@@ -16,7 +16,7 @@ def main():
     # but we randomize the chose of artists
     artists=[]
 
-    #Create random IDs and make request for every ID
+    #Create random IDs and request every ID
     IDs= random.sample(range(200),20)
 
     for i in IDs:
@@ -24,7 +24,7 @@ def main():
         artists.append({'name': r['name'] , 'id' : r['id'], 'nb_album' :r['nb_album'] ,'nb_fan':r['nb_fan'] })
         #print(r)
 
-    # we randomize the choise of artists
+    # we randomize the choice of artists
     #[name1,name2] = random.sample(f_j, 2)
 
     stop='N'
@@ -44,20 +44,20 @@ def double_quest(artists):
     fans2=artists[idx2]['nb_fan']
 
 
-    answer=input("which has Band/songer write more albums ? write 1 for {} and 2 for {}:".format(name1,name2))
+    answer=input("which has Band/singer write more albums ? write 1 for {} and 2 for {}:".format(name1,name2))
     if (str(answer)=='1' and  album1>album2) or (str(answer)=='2' and  album1<album2):
-        print(" you win, {} have been pubblish {} while {} only {}".format(name1,album1,name2,album2))
+        print(" you win, {} have been published {} while {} only {}".format(name1,album1,name2,album2))
     elif (str(answer)=='2' and  album1>album2) or (str(answer)=='1' and  album1<album2):
-        print(" you lose, because {} have been pubblish {} while {} only {}".format(name2,album2,name1,album1))
+        print(" you lose, because {} have been published {} while {} only {}".format(name2,album2,name1,album1))
     else:
         print("why do not you write 1 or 2?")
 
 
     answer=input("which has Band/songer more fans ? write 1 for {} and 2 for {}:".format(name1,name2))
     if (str(answer)=='1' and  fans1>fans2) or (str(answer)=='2' and  fans1<fans2):
-        print(" you win , {} have been pubblish {} while {} only {}".format(name1,fans1,name2,fans2))
+        print(" you win , {} have been published {} while {} only {}".format(name1,fans1,name2,fans2))
     elif (str(answer)=='2' and  fans1>fans2) or (str(answer)=='1' and  fans1<fans2):
-        print(" you lose , because {} have been pubblish {} while {} only {}".format(name2,fans1,name2,fans2))
+        print(" you lose , because {} have been published{} while {} only {}".format(name2,fans1,name2,fans2))
     else:
         print("why do not you write 1 or 2?")
 
